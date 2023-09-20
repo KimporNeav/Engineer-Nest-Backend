@@ -242,7 +242,7 @@ app.post('/api/mailContact', async (req, res) => { // Added 'async' to the route
     // Return a response to the client
     // return "Mail sending process completed";
 });
-
-app.listen(8000, () => {
-    console.log('Server is running on port 8000');
+const port =  process.env.PORT
+app.listen(port || 8000, () => {
+    console.log(`Server is running on port ${port}`);
 });
