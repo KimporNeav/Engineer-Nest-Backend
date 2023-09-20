@@ -173,7 +173,6 @@ app.post('/api/mailContact', async (req, res) => { // Added 'async' to the route
     try {
         console.log("Sending email ...");
         const myEmail = req.body.email;
-        const skill = req.body.skill;
         // const name = req.body.name;
         const receiver = process.env.SMTP_RECEIVER
         let transporter = nodemailer.createTransport({
@@ -224,7 +223,6 @@ app.post('/api/mailContact', async (req, res) => { // Added 'async' to the route
             locals: {
                 // name: name,
                 email: myEmail,
-                skill: skill
             },
         })
             .then(console.log(`Mail sent successfully to ${receiver}`));
